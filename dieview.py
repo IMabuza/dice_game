@@ -1,11 +1,11 @@
 from graphics import *
 
 class DieView:
-	"""DieView is a widget that displays a graphical representation of a standard six-sided die."""
+	#"""DieView is a widget that displays a graphical representation of a standard six-sided die."""
 
 	def __init__(self, win, center, size):
-	""" create a view of a die e.g: d1 = DieView (myWin, Point(40,50), 20).
-	This creates a die centered at (40,50) with length 20. """
+	#""" create a view of a die e.g: d1 = DieView (myWin, Point(40,50), 20).
+	#This creates a die centered at (40,50) with length 20. """
 
 	# define standard values for drawing the die
 		self.win = win 				#for drawing the pips
@@ -22,11 +22,11 @@ class DieView:
 	# Draw an initial value
 
 	def __makePip(self, x, y):
-		""" Internal helper method to draw a pip at (x,y)"""
+		#""" Internal helper method to draw a pip at (x,y)"""
 		#CODE
 
 	def setValue(self, value):
-		"""Set this die to display value. """
+		#"""Set this die to display value. """
 
 		#turn all pips off
 

@@ -6,27 +6,48 @@ class Button:
 	true if the button is active and p is inside it. """
 
 	def __init__ (self, win, center, width, height, label):
-	"""" creates a rectangualr button, eg:
-	qp = Button (myWin, centerPoint, width, height, 'quit')"""
+		"""" creates a rectangualr button, eg:"""
+		""" qp = Button (myWin, centerPoint, width, height, 'quit')"""
 
-	#set attributes here
+		#set attributes here
+
+		self.win = win
+
+		self.width = width/2
+		self.height = height/2
+		
+		centerX = center.getX()
+		centerY = center.getY()
+
+		self.x1 = centerX - self.width
+		self.x2 = centerX + self.width
+		self.y1 = centerY - self.height
+		self.y2 = centerY + self.height
+
+		self.rect = Rectangle(Point(self.x1, self.y1), Point(self.x2, self.y2))
+		self.rect.setFill("white")
+		self.rect.draw(win)
+		self.label = Text(center, label)
+		self.label.draw(self.win)
+
+		
 
 	def clicked(self, p):
-	"""returns true if the button active and p is inside"""
+		"""returns true if the button active and p is inside"""
 
 	#CODE
 
 	def getLabel(self):
-	"""returns the label string of the button"""
+		"""returns the label string of the button"""
 
 	#CODE
 
 	def activate(self):
-	"""Sets this button to 'active'"""
+		"""Sets this button to 'active'"""
 
 	#CODE
 
 	def deactivate (self):
-	"""Sets this button to 'active'"""
+		"""Sets this button to 'active'"""
 	
 	#CODE
