@@ -1,11 +1,11 @@
 from graphics import *
 
 class DieView:
-	#"""DieView is a widget that displays a graphical representation of a standard six-sided die."""
+	"""DieView is a widget that displays a graphical representation of a standard six-sided die."""
 
 	def __init__(self, win, center, size):
-	#""" create a view of a die e.g: d1 = DieView (myWin, Point(40,50), 20).
-	#This creates a die centered at (40,50) with length 20. """
+		""" create a view of a die e.g: d1 = DieView (myWin, Point(40,50), 20).
+		This creates a die centered at (40,50) with length 20. """
 
 	# define standard values for drawing the die
 		self.win = win 				#for drawing the pips
@@ -17,17 +17,60 @@ class DieView:
 
 	# create a square for the face
 
+		self.width = size/2
+		self.height = size/2
+		
+		centerX = center.getX()
+		centerY = center.getY()
+
+		self.x1 = centerX - self.width
+		self.x2 = centerX + self.width
+		self.y1 = centerY - self.height
+		self.y2 = centerY + self.height
+
+		self.rect = Rectangle(Point(self.x1, self.y1), Point(self.x2, self.y2))
+		self.rect.setFill(self.background)
+		self.rect.draw(win)
+
 	# create 7 circles for standard pip locations
+		self.pip1 = self.__makePip(centerX - offset, centerY - offset)
+		self.pip2 = self.__makePip(centerX - offset, centerY)
+		self.pip3 = self.__makePip(centerX - offset, centerY + offset)
+		self.pip4 = self.__makePip(centerX + offset, centerY + offset)
+		self.pip5 = self.__makePip(centerX + offset, centerY)
+		self.pip6 = self.__makePip(centerX + offset, centerY - offset)
+		self.pip7 = self.__makePip(centerX, centerY)
+
 
 	# Draw an initial value
 
+		self.setValue(1)
+
 	def __makePip(self, x, y):
-		#""" Internal helper method to draw a pip at (x,y)"""
+		""" Internal helper method to draw a pip at (x,y)"""
 		#CODE
 
+		pip = Circle(Point(x,y), self.psize)
+		pip.setFill(self.background)
+		pip.setOutline(self.background)
+		pip.draw(self.win)
+		return pip
+
+
+
 	def setValue(self, value):
-		#"""Set this die to display value. """
+		"""Set this die to display value. """
 
 		#turn all pips off
+		self.pip1.setFill(self.background)
+		self.pip2.setFill(self.background)
+		self.pip3.setFill(self.background)
+		self.pip4.setFill(self.background)
+		self.pip5.setFill(self.background)
+		self.pip6.setFill(self.background)
+		self.pip7.setFill(self.background)
 
 		# turn correct pips on
+
+		if value == 1:
+			self.pip7.setFill(self.foreground)

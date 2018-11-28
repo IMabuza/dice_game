@@ -35,6 +35,7 @@ class Button:
 	def clicked(self, p):
 		"""returns true if the button active and p is inside"""
 
+
 	#CODE
 
 	def getLabel(self):
@@ -49,5 +50,7 @@ class Button:
 
 	def deactivate (self):
 		"""Sets this button to 'active'"""
+		self.active = false
+		self.rect.setFill("gray")
 	
 	#CODE

@@ -5,7 +5,7 @@ from random import randrange
 from graphics import GraphWin, Point
 
 from button import Button
-#from dieview import Dieview
+from dieview import DieView
 
 def main():
 
@@ -18,6 +18,9 @@ def main():
 
 	Button(win, Point(4,2), 3, 2, "Roll")
 	Button(win, Point(8,2), 3, 2, "Quit")
+
+	DieView(win, Point(3,6), 3)
+	DieView(win, Point(7,6), 3)
 
 	# event loop
 
