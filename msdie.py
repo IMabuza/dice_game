@@ -36,12 +36,3 @@ class MSdie:
 
   def setValue(self, value):
     self.current_value = value
-
-#Create Die Object with number of sides
-die = MSdie(13)
-#set die value (cheat)
-die.setValue(3)
-#print the value
-print(die.getValue())
-#roll die 
-print(die.roll())

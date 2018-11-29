@@ -6,6 +6,7 @@ from graphics import GraphWin, Point
 
 from button import Button
 from dieview import DieView
+from msdie import MSdie
 
 def main():
 
@@ -16,16 +17,24 @@ def main():
 
 	# draw the interface widgets
 
-	Button(win, Point(4,2), 3, 2, "Roll")
-	Button(win, Point(8,2), 3, 2, "Quit")
+	b1 = Button(win, Point(4,2), 3, 2, "Roll")
+	b2 = Button(win, Point(8,2), 3, 2, "Quit")
 
-	DieView(win, Point(3,6), 3)
-	DieView(win, Point(7,6), 3)
+	d1 = DieView(win, Point(3,6), 3)
+	d2 = DieView(win, Point(7,6), 3)
 
 	# event loop
 
+	while True:
+		if b1.clicked(win.getMouse()):
+			d1.setValue(MSdie(6).roll())
+			d2.setValue(MSdie(6).roll())
+		elif b2.clicked(win.getMouse()):
+			return False
+
+	
+
 	# close the window
-	win.getMouse()
 	win.close()
 
 main()

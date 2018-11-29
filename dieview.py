@@ -14,6 +14,7 @@ class DieView:
 		self.psize = 0.1 * size 	#radius of each pip
 		hsize = size/2				#half the size of the die
 		offset = 0.6 * hsize		#distance from centre to outer pips
+		
 
 	# create a square for the face
 
@@ -74,3 +75,29 @@ class DieView:
 
 		if value == 1:
 			self.pip7.setFill(self.foreground)
+		elif value == 2:
+			self.pip1.setFill(self.foreground)
+			self.pip4.setFill(self.foreground)
+		elif value == 3:
+			self.pip1.setFill(self.foreground)
+			self.pip4.setFill(self.foreground)
+			self.pip7.setFill(self.foreground)
+		elif value == 4:
+			self.pip1.setFill(self.foreground)
+			self.pip3.setFill(self.foreground)
+			self.pip4.setFill(self.foreground)
+			self.pip6.setFill(self.foreground)
+		elif value == 5:
+			self.pip1.setFill(self.foreground)
+			self.pip3.setFill(self.foreground)
+			self.pip4.setFill(self.foreground)
+			self.pip6.setFill(self.foreground)
+			self.pip7.setFill(self.foreground)
+		elif value == 6:
+			self.pip1.setFill(self.foreground)
+			self.pip3.setFill(self.foreground)
+			self.pip4.setFill(self.foreground)
+			self.pip6.setFill(self.foreground)
+			self.pip2.setFill(self.foreground)
+			self.pip5.setFill(self.foreground)
+		

@@ -11,6 +11,7 @@ class Button:
 
 		#set attributes here
 
+
 		self.win = win
 
 		self.width = width/2
@@ -29,28 +30,36 @@ class Button:
 		self.rect.draw(win)
 		self.label = Text(center, label)
 		self.label.draw(self.win)
+		self.activate()
 
 		
 
 	def clicked(self, p):
 		"""returns true if the button active and p is inside"""
 
+		if self.active and self.x1 <= p.getX() <= self.x2 and self.y1 <= p.getY() <= self.y2:
+			return True
 
 	#CODE
 
 	def getLabel(self):
 		"""returns the label string of the button"""
+		return self.label.getText()
 
 	#CODE
 
 	def activate(self):
 		"""Sets this button to 'active'"""
+		self.rect.setFill("white")
+		self.active = True
+
 
 	#CODE
 
 	def deactivate (self):
-		"""Sets this button to 'active'"""
-		self.active = false
-		self.rect.setFill("gray")
+		"""Sets this button to 'inactive'"""
+		self.rect.setFill("grey")
+		self.active = False
+		
 	
 	#CODE
